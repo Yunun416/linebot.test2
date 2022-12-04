@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+    table {
+    width: 1200px;
+    height: 810px;
+    border-spacing: 10px;
+    font-family: Microsoft JhengHei;
+  }
+
+  table td {
+    text-align: center;
+    padding: 0px;
+  }
+
+  .icon {
+    color: #ffffff;
+    font-size: 280px;
+  }
+
+  .text {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  .text1 {
+    margin-top: 10px;
+    color: #a9a9a9;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+
+  #block1 {
+    background-color: #ffffff;
+    width: 33.33%;
+    height: 60px;
+  }
+
+  #block2 {
+    border-radius: 25px 25px 0px 0px;
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 60px;
+  }
+
+  #block3 {
+    background-color: #ffffff;
+    width: 33.33%;
+    height: 60px;
+  }
+
+
+
+  #block4 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+  #block5 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+  #block6 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+
+  #block7 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+  #block8 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+  #block9 {
+    background-color: #a9a9a9;
+    width: 33.33%;
+    height: 375px;
+  }
+
+  </style>
+</head>
+
+<body>
+    <table id="capture">
+      <tr>
+        <td id="block1" >
+          <i class="fa fa-file-text-o icon"></i>
+          <div class="text1">使用方法</div>
+        </td>
+        <td id="block2">
+          <i class="fa fa-link icon"></i>
+          <div class="text"> 資料分析</div>
+        </td>
+        <td id="block3">
+          <i class="fa fa-list icon"></i>
+          <div class="text1">推薦系統</div>
+        </td>
+      </tr>
+      <tr>
+        <td id="block4">
+          <i class="fa fa-file-text-o icon"></i>
+          <div class="text">文字</div>
+        </td>
+        <td id="block5">
+          <i class="fa fa-link icon"></i>
+          <div class="text">文字</div>
+        </td>
+        <td id="block6">
+          <i class="fa fa-list icon"></i>
+          <div class="text">文字</div>
+        </td>
+      </tr>
+        <td id="block7">
+          <i class="fa fa-file-text-o icon"></i>
+          <div class="text">文字</div>
+        </td>
+        <td id="block8">
+          <i class="fa fa-link icon"></i>
+          <div class="text">網址</div>
+        </td>
+        <td id="block9">
+          <i class="fa fa-list icon"></i>
+          <div class="text">選單</div>
+        </td>
+      </tr>
+    </table>
+    <button onclick="block_capture()">點我擷取區塊</button>
+    <script>
+        function block_capture() {
+            html2canvas(document.querySelector("#capture")).then(function (canvas) {
+                a = document.createElement('a');
+                a.href = canvas.toDataURL("image/jpeg", 1).replace("image/jpeg", "image/octet-stream");
+                a.download = 'richmenu2.jpg';
+                a.click();
+            });
+        }
+    </script>
+</body>
+</html>
